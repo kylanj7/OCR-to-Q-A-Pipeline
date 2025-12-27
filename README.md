@@ -2,7 +2,7 @@
 
 This pipeline converts unorganized OCR-extracted text from technical PDFs into high-quality Q&A pairs for fine-tuning language models using LoRA adapters.
 
-## 🚀 Features
+## Features
 
 - **OCR Artifact Cleaning**: Fixes common OCR issues (split words, spacing, abbreviations)
 - **Compliance Filtering**: Automatically removes FCC statements and safety warnings
@@ -23,7 +23,7 @@ This pipeline converts unorganized OCR-extracted text from technical PDFs into h
   - Comparison questions
 - **Granular Output**: Generates highly specific Q&A pairs perfect for technical documentation
 
-## 📦 Installation
+## Installation
 
 ```bash
 # Install required packages
@@ -32,7 +32,7 @@ pip install tqdm
 # Clone or copy all modules to your working directory
 ```
 
-## 🔧 Usage
+## Usage
 
 ### Basic Usage
 
@@ -57,7 +57,7 @@ python process_dataset.py \
 - `--chunk-size`: Size of text chunks for processing (default: 1000 words)
 - `--verbose`: Enable detailed logging
 
-## 📊 Output Format
+## Output Format
 
 The pipeline generates a JSONL file where each line contains:
 
@@ -70,7 +70,7 @@ The pipeline generates a JSONL file where each line contains:
 }
 ```
 
-## 🔍 Example Outputs
+## Example Outputs
 
 ### Pin Information
 - Q: "What is the function of Pin 7?"
@@ -88,7 +88,7 @@ The pipeline generates a JSONL file where each line contains:
 - Q: "What should I check if Pin 5 is not functioning correctly?"
 - A: "Verify that Pin 5 is properly connected and providing USB_D+. Check for proper voltage levels and ensure no shorts to ground or adjacent pins."
 
-## 📁 Generated Files
+## Generated Files
 
 The processor creates several files:
 
@@ -99,7 +99,7 @@ The processor creates several files:
    - `qa_samples_readable.txt` - Human-readable samples
 3. **Statistics**: `dataset_statistics.json` - Processing statistics
 
-## 🛠️ Customization
+## Customization
 
 ### Adding New Entity Types
 
@@ -123,7 +123,7 @@ self.templates[EntityType.YOUR_TYPE] = {
 }
 ```
 
-## 🐛 Troubleshooting
+## Troubleshooting
 
 ### No entities found
 - Check if compliance filtering is too aggressive
@@ -135,14 +135,14 @@ self.templates[EntityType.YOUR_TYPE] = {
 - Check entity extraction patterns match your data
 - Review table detection thresholds
 
-## 📈 Performance Tips
+## Performance Tips
 
 - Process in batches if handling multiple files
 - Use `--verbose` to identify bottlenecks
 - Review samples before full training
 - Adjust chunk_size based on document structure
 
-## 🎯 Integration with LoRA Training
+## Integration with LoRA Training
 
 The output is directly compatible with your Unsloth training script:
 
@@ -151,7 +151,7 @@ The output is directly compatible with your Unsloth training script:
 dataset = load_dataset('json', data_files=CONFIG['dataset_path'], split='train')
 ```
 
-## 📝 Notes for Intel Documentation
+## Notes for Intel Documentation
 
 This processor is optimized for:
 - Server hardware specifications
