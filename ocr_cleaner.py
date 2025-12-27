@@ -28,17 +28,6 @@ class OCRTextCleaner:
             'GHz': ['ghz', 'g hz', 'G Hz'],
         }
         
-        # Compliance/safety patterns to remove
-        self.compliance_patterns = [
-            r'FCC\s+[Ss]tatement.*?(?=\n\n|[A-Z][a-z]+:|\Z)',
-            r'[Ss]afety\s+[Ww]arning.*?(?=\n\n|[A-Z][a-z]+:|\Z)',
-            r'[Cc]ompliance\s+[Nn]ote.*?(?=\n\n|[A-Z][a-z]+:|\Z)',
-            r'[Ww]arranty\s+[Dd]isclaimer.*?(?=\n\n|[A-Z][a-z]+:|\Z)',
-            r'[Ll]egal\s+[Nn]otice.*?(?=\n\n|[A-Z][a-z]+:|\Z)',
-            r'This\s+device\s+complies\s+with.*?(?=\n\n|[A-Z][a-z]+:|\Z)',
-            r'[Cc]aution:.*?electric\s+shock.*?(?=\n\n|[A-Z][a-z]+:|\Z)',
-        ]
-        
     def fix_ocr_artifacts(self, text: str) -> str:
         """Fix common OCR issues"""
         # Fix tech abbreviations first
