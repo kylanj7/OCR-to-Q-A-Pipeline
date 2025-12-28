@@ -150,14 +150,3 @@ The output is directly compatible with your Unsloth training script:
 # Your existing code works as-is!
 dataset = load_dataset('json', data_files=CONFIG['dataset_path'], split='train')
 ```
-
-## Notes for Intel Documentation
-
-This processor is optimized for:
-- Server hardware specifications
-- BIOS configuration guides
-- Pin mappings and electrical characteristics
-- Register definitions and bit fields
-- Troubleshooting procedures
-
-The granular Q&A pairs will help your model answer highly specific technical questions about Intel server hardware.
